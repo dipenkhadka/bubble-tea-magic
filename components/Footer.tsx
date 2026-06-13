@@ -16,12 +16,13 @@ export default function Footer() {
         <div className="flex flex-col gap-10 sm:flex-row sm:justify-between">
           <div>
             <div className="flex items-center gap-3">
-              <div className="relative h-14 w-14 shrink-0 rounded-xl bg-white p-1">
+              <div className="relative h-16 w-16 shrink-0">
                 <Image
-                  src="/images/logo.jpeg"
+                  src="/images/logo.png"
                   alt="Bubble Tea Magic logo"
                   fill
-                  className="object-contain p-1"
+                  sizes="64px"
+                  className="object-contain"
                 />
               </div>
               <span className="font-display text-xl font-bold text-cream">
