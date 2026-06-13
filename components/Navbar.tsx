@@ -45,7 +45,7 @@ export default function Navbar() {
               priority
             />
           </div>
-          <span className="font-display text-xl sm:text-2xl lg:text-3xl font-bold text-cream tracking-tight">
+          <span className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-black tracking-tight">
             Bubble Tea Magic
           </span>
         </a>
