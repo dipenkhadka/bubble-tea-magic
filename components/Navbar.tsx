@@ -50,12 +50,12 @@ export default function Navbar() {
           </span>
         </a>
 
-        <div className="hidden items-center gap-8 lg:flex">
+        <div className="hidden items-center gap-2 lg:flex">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="focus-ring rounded text-sm font-semibold text-cream/80 transition-colors hover:text-caramel"
+              className="focus-ring ounded-full border border-espresso/20 bg-white/40 px-4 py-1.5 text-sm font-semibold text-espresso transition-all hover:border-espresso hover:bg-white/70"
             >
               {l.label}
             </a>
@@ -67,7 +67,7 @@ export default function Navbar() {
             href={business.doorDashUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="focus-ring rounded-full bg-espresso px-5 py-2.5 text-sm font-bold text-cream shadow-sm transition-transform hover:scale-105 hover:bg-espresso-deep"
+            className="focus-ring rounded-full bg-[#ff3008] px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-transform hover:scale-105 hover:bg-[#e02a07]"
           >
             Order on DoorDash
           </a>
