@@ -29,8 +29,8 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-espresso/95 backdrop-blur-md shadow-[0_2px_20px_-8px_rgba(0,0,0,0.4)]"
-          : "bg-espresso/80 backdrop-blur-sm"
+          ? "bg-[#b8d8b8]/95 backdrop-blur-md shadow-[0_2px_20px_-8px_rgba(0,0,0,0.15)]"
+          : "bg-[#b8d8b8]/90 backdrop-blur-sm"
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
