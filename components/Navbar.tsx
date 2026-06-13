@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import { business } from "@/lib/data";
 
@@ -69,6 +69,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="focus-ring rounded-full bg-[#ff3008] px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-transform hover:scale-105 hover:bg-[#e02a07]"
           >
+            <ShoppingBag className="h-4 w-4" />
             Order on DoorDash
           </a>
         </div>
