@@ -2,9 +2,9 @@ export const business = {
   name: "Bubble Tea Magic",
   address: "1201 N Main St #300, Euless, TX 76039",
   phone: "(817) 555-0123",
-  email: "hello@bubbleteamagic.com",
+  email: "info.bubbleteamagic@gmail.com",
   doorDashUrl: "https://www.doordash.com",
-  instagramUrl: "https://instagram.com",
+  instagramUrl: "https://www.instagram.com/bubbleteamagic/?hl=en",
   mapsEmbed:
     "https://www.google.com/maps?q=1201+N+Main+St+%23300,+Euless,+TX+76039&output=embed",
   directionsUrl:
@@ -12,9 +12,9 @@ export const business = {
   hours: [
     { day: "Monday – Thursday", time: "11:00 AM – 9:00 PM" },
     { day: "Friday – Saturday", time: "11:00 AM – 10:00 PM" },
-    { day: "Sunday", time: "12:00 PM – 9:00 PM" },
+    { day: "Sunday", time: "11:00 PM – 9:00 PM" },
   ],
-  serviceArea: ["Euless", "Bedford", "Irving", "Grapevine", "Hurst", "DFW Airport"],
+  serviceArea: ["Euless", "Near from Bedford", "Irving", "Hurst", "DFW Airport"],
 };
 
 export const menuCategories = [
@@ -26,7 +26,12 @@ export const menuCategories = [
   {
     emoji: "🥭",
     title: "Fruit Tea",
-    desc: "Blueberry, peach, honeydew, passion, kiwi, mango, pomegranate & more.",
+    desc: "Blueberry, peach, honeydew, passion, ginger, kiwi, green apple, pomegranate & mango.",
+  },
+  {
+    emoji: "🍹",
+    title: "Slushy",
+    desc: "Cherry, Lychee, Strawberry, Pineapple & Mango — icy and refreshing.",
   },
   {
     emoji: "🍧",
@@ -35,8 +40,8 @@ export const menuCategories = [
   },
   {
     emoji: "☕",
-    title: "Vietnamese Coffee",
-    desc: "Slow-dripped over sweetened condensed milk — bold and smooth over ice.",
+    title: "Coffee & Vietnamese Coffee",
+    desc: "Iced Latte, Caramel Latte, Americano, Espresso, Masala Chai, Iced Matcha & Vietnamese Iced Coffee.",
   },
   {
     emoji: "🧇",
@@ -88,6 +93,29 @@ export const milkTeaFlavors = [
   "Lavender", "Banana", "Vanilla", "Chocolate", "Mocha", "Mango", "Strawberry",
 ];
 
+export const fruitTeaFlavors = [
+  "Blueberry", "Peach", "Honeydew", "Passion", "Ginger", "Kiwi", "Green Apple", "Pomegranate", "Mango",
+];
+
+export const slushyFlavors = ["Cherry", "Lychee", "Strawberry", "Pineapple", "Mango"];
+
+export const iceBlendFlavors = [
+  "Mocha", "Taro", "Vanilla", "Matcha", "Coconut", "Avocado", "Banana",
+  "Peach", "Mango", "Strawberry", "Cappuccino", "Cookies & Cream", "Blueberry", "Pistachio",
+];
+
+export const smoothieFlavors = ["Strawberry Banana", "Blueberry Banana", "Strawberry Blueberry"];
+
+export const coffeeMenu = [
+  { name: "Ice Latte", price: "$5.29 / $6.99" },
+  { name: "Ice Caramel Latte", price: "$5.29 / $6.99" },
+  { name: "Americano", price: "$3.99 (S)" },
+  { name: "Masala Chai (Tea)", price: "$1.99" },
+  { name: "Espresso Shot", price: "$2.59" },
+  { name: "Iced Matcha Latte", price: "$4.99 / $5.99" },
+  { name: "Vietnamese Iced Coffee", price: "$5.99" },
+];
+
 export const bubbleWaffles = [
   { name: "Bubble Waffle", desc: "Bubble waffle, butter, ice cream & syrup", price: "$4.99" },
   { name: "Oreo Bubble Waffle", desc: "Chocolate ice cream, Oreo & chocolate drizzle", price: "$4.99" },
@@ -112,6 +140,29 @@ export const momoAndRamen = {
     { name: "Shin Red (Original)", price: "$4.99" },
     { name: "Shin Black", price: "$4.99" },
   ],
+};
+
+export const chocolateDipped = [
+  { name: "Chocolate Strawberry", price: "3pc / 6pc — $4.99 / $8.99" },
+  { name: "Chocolate Banana", price: "3pc / 6pc — $4.99 / $8.99" },
+];
+
+export const specialtyDrinks = [
+  { name: "Mango Nada", price: "$7.99" },
+];
+
+export const toppings = {
+  poppings: "Variety of popping flavors",
+  jelly: "Variety of jelly flavors",
+  price: "$0.99 each",
+};
+
+export const sizesPricing = {
+  milkTea: { medium: "$4.99", large: "$5.99" },
+  fruitTea: { medium: "$4.99", large: "$5.99" },
+  slushy: { medium: "$4.59", large: "$5.59" },
+  iceBlend: { medium: "$5.99", large: "$6.99" },
+  smoothie: { medium: "$5.99", large: "$6.99" },
 };
 
 export const whyChooseUs = [
