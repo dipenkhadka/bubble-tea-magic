@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand tokens — Bubble Tea Magic */
+  --color-espresso: #3d2817;
+  --color-espresso-deep: #2a1a0f;
+  --color-caramel: #c9a227;
+  --color-caramel-light: #e8b86d;
+  --color-cream: #fff8f0;
+  --color-latte: #8b5a3c;
+  --color-ink: #1a1208;
+
+  --background: var(--color-cream);
+  --foreground: var(--color-ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-espresso: var(--color-espresso);
+  --color-espresso-deep: var(--color-espresso-deep);
+  --color-caramel: var(--color-caramel);
+  --color-caramel-light: var(--color-caramel-light);
+  --color-cream: var(--color-cream);
+  --color-latte: var(--color-latte);
+  --color-ink: var(--color-ink);
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-jakarta);
+  --font-mono: var(--font-jetbrains);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-jakarta), sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Pearl animation keyframes used in hero */
+@keyframes pearl-settle {
+  0% {
+    transform: translateY(-120px) scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pearl-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.focus-ring:focus-visible {
+  outline: 3px solid var(--color-caramel);
+  outline-offset: 2px;
+}
