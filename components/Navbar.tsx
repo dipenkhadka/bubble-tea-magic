@@ -55,7 +55,7 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="focus-ring ounded-full border border-espresso/20 bg-white/40 px-4 py-1.5 text-sm font-semibold text-espresso transition-all hover:border-espresso hover:bg-white/70"
+              className="focus-ring rounded-full border border-espresso/20 bg-white/40 px-4 py-1.5 text-sm font-semibold text-espresso transition-all hover:border-espresso hover:bg-white/70"
             >
               {l.label}
             </a>
@@ -67,7 +67,7 @@ export default function Navbar() {
             href={business.doorDashUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="focus-ring rounded-full bg-[#ff3008] px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-transform hover:scale-105 hover:bg-[#e02a07]"
+            className="focus-ring inline-flex items-center gap-2 rounded-full bg-[#ff3008] px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-transform hover:scale-105 hover:bg-[#e02a07]"
           >
             <ShoppingBag className="h-4 w-4" />
             Order on DoorDash
@@ -77,7 +77,7 @@ export default function Navbar() {
         <button
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
-          className="focus-ring rounded-lg p-2 text-cream lg:hidden"
+          className="focus-ring rounded-lg p-2 text-espresso lg:hidden"
         >
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -90,7 +90,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="overflow-hidden border-t border-cream/10 bg-espresso lg:hidden"
+            className="overflow-hidden border-t border-espresso/10 bg-[#c9b8e8] lg:hidden"
           >
             <div className="flex flex-col gap-1 px-4 py-4 sm:px-6">
               {links.map((l) => (
@@ -98,7 +98,7 @@ export default function Navbar() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="focus-ring rounded-lg px-3 py-3 text-base font-semibold text-cream hover:bg-caramel/20"
+                  className="focus-ring rounded-lg px-3 py-3 text-base font-semibold text-espresso hover:bg-espresso/10"
                 >
                   {l.label}
                 </a>
@@ -108,8 +108,9 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="focus-ring mt-2 rounded-full bg-espresso px-5 py-3 text-center text-base font-bold text-cream"
+                className="focus-ring mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#ff3008] px-5 py-3 text-center text-base font-bold text-white"
               >
+                <ShoppingBag className="h-4 w-4" />
                 Order on DoorDash
               </a>
             </div>
