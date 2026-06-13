@@ -278,20 +278,35 @@ export default function Menu() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="rounded-3xl bg-cream/5 p-6 ring-1 ring-cream/10 sm:p-10"
+            className="rounded-3xl bg-cream/5 ring-1 ring-cream/10 overflow-hidden"
           >
-            <h3 className="font-display text-2xl font-bold text-cream sm:text-3xl">
-              🥟 Himalayan Momo &amp; 🍜 Ramen
-            </h3>
-            <div className="mt-6 grid gap-x-6 gap-y-2 sm:grid-cols-2">
-              {[...momoAndRamen.momo, ...momoAndRamen.ramen].map((item) => (
-                <div key={item.name} className="flex items-center justify-between gap-3 py-1.5">
-                  <p className="text-sm text-cream/80">{item.name}</p>
-                  <span className="shrink-0 font-mono text-sm text-caramel-light">
-                    {item.price}
-                  </span>
-                </div>
-              ))}
+            <div className="relative h-56 w-full">
+              <Image
+                src="/images/momo_ramen.png"
+                alt="Himalayan Momo and Ramen"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 to-transparent" />
+              <div className="absolute bottom-4 left-6">
+                <h3 className="font-display text-2xl font-bold text-cream sm:text-3xl">
+                  🥟 Himalayan Momo &amp; 🍜 Ramen
+                </h3>
+                <p className="text-sm text-caramel-light font-semibold">Steamed to Perfection. Warm Bowl. Happy Soul.</p>
+              </div>
+            </div>
+            <div className="p-6 sm:p-10">
+              <div className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
+                {[...momoAndRamen.momo, ...momoAndRamen.ramen].map((item) => (
+                  <div key={item.name} className="flex items-center justify-between gap-3 py-1.5">
+                    <p className="text-sm text-cream/80">{item.name}</p>
+                    <span className="shrink-0 font-mono text-sm text-caramel-light">
+                      {item.price}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
