@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   menuCategories,
   freshJuices,
@@ -198,7 +199,7 @@ export default function Menu() {
           </div>
         </motion.div>
 
-        {/* Featured fresh juices */}
+        {/* Fresh Juices */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -230,30 +231,45 @@ export default function Menu() {
           </div>
         </motion.div>
 
-        {/* Bubble waffles + Momo/Ramen */}
+        {/* Bubble Waffles + Momo/Ramen */}
         <div className="mt-8 grid gap-8 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl bg-cream/5 p-6 ring-1 ring-cream/10 sm:p-10"
+            className="rounded-3xl bg-cream/5 ring-1 ring-cream/10 overflow-hidden"
           >
-            <h3 className="font-display text-2xl font-bold text-cream sm:text-3xl">
-              🧇 Bubble Waffles
-            </h3>
-            <div className="mt-6 space-y-4">
-              {bubbleWaffles.map((w) => (
-                <div key={w.name} className="flex items-start justify-between gap-4 border-b border-cream/10 pb-3 last:border-0 last:pb-0">
-                  <div>
-                    <p className="font-semibold text-cream">{w.name}</p>
-                    <p className="mt-1 text-xs text-cream/50">{w.desc}</p>
+            <div className="relative h-56 w-full">
+              <Image
+                src="/images/waffle.png"
+                alt="Bubble Waffle Ice Cream"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 to-transparent" />
+              <div className="absolute bottom-4 left-6">
+                <h3 className="font-display text-2xl font-bold text-cream sm:text-3xl">
+                  🧇 Bubble Waffles
+                </h3>
+                <p className="text-sm text-caramel-light font-semibold">Crispy. Creamy. Dreamy.</p>
+              </div>
+            </div>
+            <div className="p-6 sm:p-10">
+              <div className="space-y-4">
+                {bubbleWaffles.map((w) => (
+                  <div key={w.name} className="flex items-start justify-between gap-4 border-b border-cream/10 pb-3 last:border-0 last:pb-0">
+                    <div>
+                      <p className="font-semibold text-cream">{w.name}</p>
+                      <p className="mt-1 text-xs text-cream/50">{w.desc}</p>
+                    </div>
+                    <span className="shrink-0 font-mono text-sm text-caramel-light">
+                      {w.price}
+                    </span>
                   </div>
-                  <span className="shrink-0 font-mono text-sm text-caramel-light">
-                    {w.price}
-                  </span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </motion.div>
 
