@@ -29,8 +29,8 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-cream/90 backdrop-blur-md shadow-[0_2px_20px_-8px_rgba(61,40,23,0.25)]"
-          : "bg-transparent"
+          ? "bg-espresso/95 backdrop-blur-md shadow-[0_2px_20px_-8px_rgba(0,0,0,0.4)]"
+          : "bg-espresso/80 backdrop-blur-sm"
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
@@ -45,7 +45,7 @@ export default function Navbar() {
               priority
             />
           </div>
-          <span className="font-display text-xl sm:text-2xl lg:text-3xl font-bold text-espresso tracking-tight">
+          <span className="font-display text-xl sm:text-2xl lg:text-3xl font-bold text-cream tracking-tight">
             Bubble Tea Magic
           </span>
         </a>
@@ -55,7 +55,7 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="focus-ring rounded text-sm font-semibold text-espresso/80 transition-colors hover:text-caramel"
+              className="focus-ring rounded text-sm font-semibold text-cream/80 transition-colors hover:text-caramel"
             >
               {l.label}
             </a>
@@ -76,7 +76,7 @@ export default function Navbar() {
         <button
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
-          className="focus-ring rounded-lg p-2 text-espresso lg:hidden"
+          className="focus-ring rounded-lg p-2 text-cream lg:hidden"
         >
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -89,7 +89,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="overflow-hidden border-t border-espresso/10 bg-cream lg:hidden"
+            className="overflow-hidden border-t border-cream/10 bg-espresso lg:hidden"
           >
             <div className="flex flex-col gap-1 px-4 py-4 sm:px-6">
               {links.map((l) => (
@@ -97,7 +97,7 @@ export default function Navbar() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="focus-ring rounded-lg px-3 py-3 text-base font-semibold text-espresso hover:bg-caramel-light/30"
+                  className="focus-ring rounded-lg px-3 py-3 text-base font-semibold text-cream hover:bg-caramel/20"
                 >
                   {l.label}
                 </a>
