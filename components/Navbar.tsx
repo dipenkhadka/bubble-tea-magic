@@ -35,15 +35,19 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <a href="#top" className="flex items-center gap-3 focus-ring rounded-lg">
-          <div className="relative h-16 w-16 shrink-0 sm:h-20 sm:w-20">
+          <div className="relative h-28 w-28 shrink-0 sm:h-36 sm:w-36">
             <Image
-              src="/images/logo.jpeg"
+              src="/images/logo.png"
               alt="Bubble Tea Magic logo"
               fill
+              sizes="144px"
               className="object-contain"
               priority
             />
           </div>
+          <span className="font-display text-xl sm:text-2xl lg:text-3xl font-bold text-espresso tracking-tight">
+            Bubble Tea Magic
+          </span>
         </a>
 
         <div className="hidden items-center gap-8 lg:flex">

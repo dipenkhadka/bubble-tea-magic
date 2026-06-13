@@ -338,7 +338,7 @@ export default function Menu() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          
+          <a
             href={business.doorDashUrl}
             target="_blank"
             rel="noopener noreferrer"
