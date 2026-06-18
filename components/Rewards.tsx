@@ -1,7 +1,79 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Gift, Star, Cake, Sparkles } from "lucide-react";
+import { Gift, Star, Cake, Sparkles, Phone } from "lucide-react";
+import { useState } from "react";
+
+function CheckBalance() {
+  const [phone, setPhone] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const formatPhone = (value: string) => {
+    const digits = value.replace(/\D/g, "").slice(0, 10);
+    if (digits.length <= 3) return digits;
+    if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+    return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const digits = phone.replace(/\D/g, "");
+    if (digits.length < 10) {
+      setError("Please enter a valid 10-digit phone number.");
+      return;
+    }
+    setError("");
+    setSubmitted(true);
+  };
+
+  return (
+    <div className="text-center">
+      <div className="flex justify-center mb-4">
+        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-caramel/15">
+          <Gift className="h-7 w-7 text-caramel" />
+        </div>
+      </div>
+      <p className="font-display text-xl font-bold text-espresso">Check Your Rewards Balance</p>
+      <p className="mt-2 text-sm text-espresso/60">Enter your phone number to check your points.</p>
+
+      {!submitted ? (
+        <form onSubmit={handleSubmit} className="mt-6">
+          <div className="flex items-center gap-2 rounded-2xl bg-espresso/5 px-4 py-3 ring-1 ring-espresso/20">
+            <Phone className="h-5 w-5 shrink-0 text-espresso/40" />
+            <input
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(formatPhone(e.target.value))}
+              placeholder="(555) 000-0000"
+              className="flex-1 bg-transparent text-espresso placeholder-espresso/30 outline-none text-base"
+            />
+          </div>
+          {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
+          <button
+            type="submit"
+            className="mt-4 w-full rounded-2xl py-3 text-base font-bold text-white bg-caramel transition-all hover:opacity-80"
+          >
+            Check Balance
+          </button>
+        </form>
+      ) : (
+        <div className="mt-6 rounded-2xl bg-caramel/10 px-6 py-6">
+          <p className="text-lg font-bold text-espresso">Thanks! 🎉</p>
+          <p className="mt-2 text-sm text-espresso/70">
+            We found <span className="font-semibold">{phone}</span>. Visit us in store to check your rewards balance.
+          </p>
+          <button
+            onClick={() => { setSubmitted(false); setPhone(""); }}
+            className="mt-4 text-sm font-semibold underline text-espresso/60 hover:text-espresso"
+          >
+            Check another number
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
 
 const features = [
   { icon: Sparkles, title: "Earn Points on Every Purchase", desc: "Every cup brings you closer to your next reward." },
@@ -55,7 +127,7 @@ export default function Rewards() {
             </div>
           </motion.div>
 
-          {/* Rewards progress graphic */}
+          {/* Check Rewards Balance */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -63,43 +135,7 @@ export default function Rewards() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="rounded-3xl border border-espresso/10 bg-white/70 p-8 shadow-sm"
           >
-            <div className="flex items-center justify-between">
-              <p className="font-display text-lg font-bold text-espresso">
-                Your Progress
-              </p>
-              <span className="font-mono text-sm font-semibold text-caramel">
-                350 / 500 pts
-              </span>
-            </div>
-
-            <div className="mt-4 h-4 w-full overflow-hidden rounded-full bg-espresso/10">
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: "70%" }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-                className="h-full rounded-full bg-gradient-to-r from-caramel to-caramel-light"
-              />
-            </div>
-
-            <p className="mt-3 text-sm text-espresso/60">
-              150 points until your next free drink!
-            </p>
-
-            <div className="mt-6 grid grid-cols-5 gap-3">
-              {[...Array(5)].map((_, i) => (
-                <div
-                  key={i}
-                  className={`flex aspect-square items-center justify-center rounded-xl text-2xl ${
-                    i < 3
-                      ? "bg-caramel/20 text-caramel"
-                      : "bg-espresso/5 text-espresso/20"
-                  }`}
-                >
-                  🧋
-                </div>
-              ))}
-            </div>
+            <CheckBalance />
           </motion.div>
         </div>
       </div>

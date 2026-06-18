@@ -8,6 +8,7 @@ import Catering from "@/components/Catering";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
 import Location from "@/components/Location";
+import GoogleReview from "@/components/GoogleReview";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         <WhyChooseUs />
         <Testimonials />
         <Location />
+        <GoogleReview />
       </main>
       <Footer />
     </>

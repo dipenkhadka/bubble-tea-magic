@@ -14,7 +14,6 @@ import {
   bubbleWaffles,
   momoAndRamen,
   chocolateDipped,
-  specialtyDrinks,
   toppings,
   sizesPricing,
   business,
@@ -26,7 +25,7 @@ function FlavorPills({ flavors }: { flavors: string[] }) {
       {flavors.map((flavor) => (
         <span
           key={flavor}
-          className="rounded-full bg-caramel/15 px-4 py-1.5 text-sm font-semibold text-caramel-light ring-1 ring-caramel/20"
+          className="rounded-full bg-caramel/15 px-4 py-1.5 text-sm font-semibold text-espresso ring-1 ring-caramel/20"
         >
           {flavor}
         </span>
@@ -37,7 +36,7 @@ function FlavorPills({ flavors }: { flavors: string[] }) {
 
 export default function Menu() {
   return (
-    <section id="menu" className="bg-espresso py-20 sm:py-28">
+    <section id="menu" className="py-10 sm:py-14" style={{backgroundColor: "#F0E6D8"}}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -46,13 +45,24 @@ export default function Menu() {
           transition={{ duration: 0.6 }}
           className="max-w-2xl"
         >
-          <p className="font-mono text-sm font-semibold uppercase tracking-widest text-caramel-light">
+          <p className="font-mono text-sm font-semibold uppercase tracking-widest text-espresso">
             The Menu
           </p>
-          <h2 className="mt-3 font-display text-4xl font-bold tracking-tight text-cream sm:text-5xl">
+          <h2 className="mt-3 font-display text-4xl font-bold tracking-tight text-espresso sm:text-5xl">
             Something delicious for every craving
           </h2>
         </motion.div>
+
+        {/* Featured boba image */}
+        <div className="mt-10 overflow-hidden rounded-3xl shadow-lg">
+          <Image
+            src="/images/boba shot.jpg"
+            alt="Signature boba milk tea"
+            width={1200}
+            height={500}
+            className="w-full h-64 sm:h-80 lg:h-96 object-cover object-center"
+          />
+        </div>
 
         {/* Category cards overview */}
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -63,18 +73,126 @@ export default function Menu() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-              className="group rounded-2xl bg-cream/5 p-6 ring-1 ring-cream/10 transition-colors hover:bg-cream/10 hover:ring-caramel/40"
+              className="group rounded-2xl bg-white p-6 ring-1 ring-espresso/10 transition-colors hover:bg-white/80 hover:ring-caramel/40"
             >
-              <div className="text-4xl">{cat.emoji}</div>
-              <h3 className="mt-4 font-display text-xl font-bold text-cream">
+              {cat.title === "Milk Tea" ? (
+                <div className="relative h-20 w-20 overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/milk tea.png"
+                    alt="Milk Tea"
+                    fill
+                    sizes="80px"
+                    className="object-cover"
+                  />
+                </div>
+              ) : cat.title === "Fruit Tea" ? (
+                <div className="relative h-20 w-20 overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/fruite tea.png"
+                    alt="Fruit Tea"
+                    fill
+                    sizes="80px"
+                    className="object-cover"
+                  />
+                </div>
+              ) : cat.title === "Slushy" ? (
+                <div className="relative h-20 w-20 overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/slushy.png"
+                    alt="Slushy"
+                    fill
+                    sizes="80px"
+                    className="object-cover"
+                  />
+                </div>
+              ) : cat.title === "Shaved Ice" ? (
+                <div className="relative h-20 w-20 overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/ice drink.png"
+                    alt="Shaved Ice"
+                    fill
+                    sizes="80px"
+                    className="object-cover"
+                  />
+                </div>
+              ) : cat.title === "Fresh Juices" ? (
+                <div className="relative h-20 w-20 overflow-hidden rounded-xl">
+                  <Image src="/images/fresh juice.png" alt="Fresh Juices" fill sizes="80px" className="object-cover" />
+                </div>
+              ) : cat.title === "Coffee & Vietnamese Coffee" ? (
+                <div className="relative h-20 w-20 overflow-hidden rounded-xl">
+                  <Image src="/images/vietnam tea.png" alt="Vietnamese Coffee" fill sizes="80px" className="object-cover" />
+                </div>
+              ) : cat.title === "Bubble Waffles" ? (
+                <div className="relative h-20 w-20 overflow-hidden rounded-xl">
+                  <Image src="/images/bubble waffle.png" alt="Bubble Waffles" fill sizes="80px" className="object-cover" />
+                </div>
+              ) : cat.title === "Ice Blend & Smoothies" ? (
+                <div className="relative h-20 w-20 overflow-hidden rounded-xl">
+                  <Image src="/images/smoothie.png" alt="Smoothies" fill sizes="80px" className="object-cover" />
+                </div>
+              ) : cat.title === "Chocolate Dipped" ? (
+                <div className="relative h-20 w-20 overflow-hidden rounded-xl">
+                  <Image src="/images/chocolate dipped.jpg" alt="Chocolate Dipped" fill sizes="80px" className="object-cover" />
+                </div>
+              ) : cat.title === "Himalayan Momo" ? (
+                <div className="relative h-20 w-20 overflow-hidden rounded-xl">
+                  <Image src="/images/momo.jpeg" alt="Himalayan Momo" fill sizes="80px" className="object-cover" />
+                </div>
+              ) : cat.title === "Ramen" ? (
+                <div className="relative h-20 w-20 overflow-hidden rounded-xl">
+                  <Image src="/images/ramen.jpg" alt="Ramen" fill sizes="80px" className="object-cover" />
+                </div>
+              ) : (
+                <div className="text-4xl">{cat.emoji}</div>
+              )}
+              <h3 className="mt-4 font-display text-xl font-bold text-espresso">
                 {cat.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-cream/60">
+              <p className="mt-2 text-sm leading-relaxed text-espresso/60">
                 {cat.desc}
               </p>
             </motion.div>
           ))}
         </div>
+
+        {/* Specialty Drink - Featured */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="mt-8 rounded-3xl overflow-hidden bg-white ring-1 ring-espresso/10"
+        >
+          <div className="flex flex-col lg:flex-row">
+            <div className="relative h-80 lg:h-auto lg:w-1/2 shrink-0 overflow-hidden">
+              <Image
+                src="/images/mangonada11.png"
+                alt="Mango Nada"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
+              />
+            </div>
+            <div className="flex flex-col justify-center p-8 lg:p-12">
+              <p className="font-mono text-sm font-semibold uppercase tracking-widest text-espresso/50">Featured Drink</p>
+              <h3 className="mt-2 font-display text-3xl font-bold text-espresso sm:text-4xl">Mango Nada</h3>
+              <p className="mt-3 text-espresso/70 text-base leading-relaxed">
+                A bold Mexican-inspired drink with chamoy, tajín, fresh mango, and our signature boba — sweet, spicy & refreshing.
+              </p>
+              <div className="mt-6 flex items-center gap-4">
+                <span className="font-display text-3xl font-bold text-espresso">$7.99</span>
+                <a
+                  href="#location"
+                  className="rounded-full px-6 py-2.5 text-sm font-bold text-white transition-all hover:opacity-80"
+                  style={{backgroundColor: "#C4956A"}}
+                >
+                  Order Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Milk Tea */}
         <motion.div
@@ -82,12 +200,15 @@ export default function Menu() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mt-16 rounded-3xl bg-cream/5 p-6 ring-1 ring-cream/10 sm:p-10"
+          className="mt-16 rounded-3xl bg-white p-6 ring-1 ring-espresso/10 sm:p-10"
         >
-          <h3 className="font-display text-2xl font-bold text-cream sm:text-3xl">
-            🧋 Milk Tea Flavors
-          </h3>
-          <p className="mt-2 text-sm text-cream/50">
+          <div className="flex items-center gap-4 mb-2">
+            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl">
+              <Image src="/images/milk tea.png" alt="Milk Tea" fill sizes="64px" className="object-cover" />
+            </div>
+            <h3 className="font-display text-2xl font-bold text-espresso sm:text-3xl">Milk Tea Flavors</h3>
+          </div>
+          <p className="mt-2 text-sm text-espresso/60">
             Medium {sizesPricing.milkTea.medium} &middot; Large {sizesPricing.milkTea.large} &mdash; choose any flavor below
           </p>
           <FlavorPills flavors={milkTeaFlavors} />
@@ -99,12 +220,15 @@ export default function Menu() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mt-8 rounded-3xl bg-cream/5 p-6 ring-1 ring-cream/10 sm:p-10"
+          className="mt-8 rounded-3xl bg-white p-6 ring-1 ring-espresso/10 sm:p-10"
         >
-          <h3 className="font-display text-2xl font-bold text-cream sm:text-3xl">
-            🥭 Fruit Tea Flavors
-          </h3>
-          <p className="mt-2 text-sm text-cream/50">
+          <div className="flex items-center gap-4 mb-2">
+            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl">
+              <Image src="/images/fruite tea.png" alt="Fruit Tea" fill sizes="64px" className="object-cover" />
+            </div>
+            <h3 className="font-display text-2xl font-bold text-espresso sm:text-3xl">Fruit Tea Flavors</h3>
+          </div>
+          <p className="mt-2 text-sm text-espresso/60">
             Medium {sizesPricing.fruitTea.medium} &middot; Large {sizesPricing.fruitTea.large}
           </p>
           <FlavorPills flavors={fruitTeaFlavors} />
@@ -117,12 +241,15 @@ export default function Menu() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl bg-cream/5 p-6 ring-1 ring-cream/10 sm:p-10"
+            className="rounded-3xl bg-white p-6 ring-1 ring-espresso/10 sm:p-10"
           >
-            <h3 className="font-display text-2xl font-bold text-cream sm:text-3xl">
-              🍹 Slushy
-            </h3>
-            <p className="mt-2 text-sm text-cream/50">
+            <div className="flex items-center gap-4 mb-2">
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl">
+                <Image src="/images/slushy.png" alt="Slushy" fill sizes="64px" className="object-cover" />
+              </div>
+              <h3 className="font-display text-2xl font-bold text-espresso sm:text-3xl">Slushy</h3>
+            </div>
+            <p className="mt-2 text-sm text-espresso/60">
               Medium {sizesPricing.slushy.medium} &middot; Large {sizesPricing.slushy.large}
             </p>
             <FlavorPills flavors={slushyFlavors} />
@@ -133,12 +260,15 @@ export default function Menu() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="rounded-3xl bg-cream/5 p-6 ring-1 ring-cream/10 sm:p-10"
+            className="rounded-3xl bg-white p-6 ring-1 ring-espresso/10 sm:p-10"
           >
-            <h3 className="font-display text-2xl font-bold text-cream sm:text-3xl">
-              🍧 Shaved Ice
-            </h3>
-            <p className="mt-2 text-sm text-cream/50">$4.99 — Popping or Jelly extra $0.99</p>
+            <div className="flex items-center gap-4 mb-2">
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl">
+                <Image src="/images/ice drink.png" alt="Shaved Ice" fill sizes="64px" className="object-cover" />
+              </div>
+              <h3 className="font-display text-2xl font-bold text-espresso sm:text-3xl">Shaved Ice</h3>
+            </div>
+            <p className="mt-2 text-sm text-espresso/60">$4.99 — Popping or Jelly extra $0.99</p>
             <FlavorPills flavors={["Pina Colada", "Tiger's Blood", "Raspberry", "Strawberry", "Grape", "Mango"]} />
           </motion.div>
         </div>
@@ -150,12 +280,15 @@ export default function Menu() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl bg-cream/5 p-6 ring-1 ring-cream/10 sm:p-10"
+            className="rounded-3xl bg-white p-6 ring-1 ring-espresso/10 sm:p-10"
           >
-            <h3 className="font-display text-2xl font-bold text-cream sm:text-3xl">
-              🍦 Ice Blend
-            </h3>
-            <p className="mt-2 text-sm text-cream/50">
+            <div className="flex items-center gap-4 mb-2">
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl">
+                <Image src="/images/smoothie.png" alt="Ice Blend" fill sizes="64px" className="object-cover" />
+              </div>
+              <h3 className="font-display text-2xl font-bold text-espresso sm:text-3xl">Ice Blend</h3>
+            </div>
+            <p className="mt-2 text-sm text-espresso/60">
               Medium {sizesPricing.iceBlend.medium} &middot; Large {sizesPricing.iceBlend.large}
             </p>
             <FlavorPills flavors={iceBlendFlavors} />
@@ -166,12 +299,15 @@ export default function Menu() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="rounded-3xl bg-cream/5 p-6 ring-1 ring-cream/10 sm:p-10"
+            className="rounded-3xl bg-white p-6 ring-1 ring-espresso/10 sm:p-10"
           >
-            <h3 className="font-display text-2xl font-bold text-cream sm:text-3xl">
-              🥤 Smoothie
-            </h3>
-            <p className="mt-2 text-sm text-cream/50">
+            <div className="flex items-center gap-4 mb-2">
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl">
+                <Image src="/images/smoothie.png" alt="Smoothie" fill sizes="64px" className="object-cover" />
+              </div>
+              <h3 className="font-display text-2xl font-bold text-espresso sm:text-3xl">Smoothie</h3>
+            </div>
+            <p className="mt-2 text-sm text-espresso/60">
               Medium {sizesPricing.smoothie.medium} &middot; Large {sizesPricing.smoothie.large} — Popping or Jelly extra $0.99
             </p>
             <FlavorPills flavors={smoothieFlavors} />
@@ -184,16 +320,22 @@ export default function Menu() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mt-8 rounded-3xl bg-cream/5 p-6 ring-1 ring-cream/10 sm:p-10"
+          className="mt-8 rounded-3xl bg-white p-6 ring-1 ring-espresso/10 sm:p-10"
         >
-          <h3 className="font-display text-2xl font-bold text-cream sm:text-3xl">
-            ☕ Coffee &amp; Vietnamese Coffee
-          </h3>
-          <div className="mt-6 grid gap-x-6 gap-y-2 sm:grid-cols-2">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl">
+              <Image src="/images/vietnam tea.png" alt="Coffee" fill sizes="64px" className="object-cover" />
+            </div>
+            <div>
+              <h3 className="font-display text-2xl font-bold text-espresso sm:text-3xl">Coffee & Vietnamese Coffee</h3>
+              <p className="text-sm text-espresso/60 mt-1">Hot & iced — crafted to order</p>
+            </div>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
             {coffeeMenu.map((item) => (
-              <div key={item.name} className="flex items-center justify-between gap-3 py-1.5 border-b border-cream/10">
-                <p className="text-sm text-cream/80">{item.name}</p>
-                <span className="shrink-0 font-mono text-sm text-caramel-light">{item.price}</span>
+              <div key={item.name} className="flex items-center justify-between gap-3 rounded-xl bg-[#F0E6D8] px-4 py-3">
+                <p className="text-sm font-semibold text-espresso">{item.name}</p>
+                <span className="shrink-0 font-mono text-sm font-bold text-espresso">{item.price}</span>
               </div>
             ))}
           </div>
@@ -205,25 +347,28 @@ export default function Menu() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mt-8 rounded-3xl bg-caramel/10 p-6 ring-1 ring-caramel/20 sm:p-10"
+          className="mt-8 rounded-3xl bg-white p-6 ring-1 ring-caramel/30 sm:p-10"
         >
-          <h3 className="font-display text-2xl font-bold text-caramel-light sm:text-3xl">
-            🥤 Fresh Juices
-          </h3>
-          <p className="mt-2 text-sm text-cream/60">
+          <div className="flex items-center gap-4 mb-2">
+            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl">
+              <Image src="/images/fresh juice.png" alt="Fresh Juices" fill sizes="64px" className="object-cover" />
+            </div>
+            <h3 className="font-display text-2xl font-bold text-espresso sm:text-3xl">Fresh Juices</h3>
+          </div>
+          <p className="mt-2 text-sm text-espresso/60">
             Cold-pressed daily — never from concentrate.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {freshJuices.map((juice) => (
               <div
                 key={juice.name}
-                className="flex items-center justify-between gap-3 rounded-xl bg-cream/5 px-4 py-3 ring-1 ring-cream/10"
+                className="flex items-center justify-between gap-3 rounded-xl bg-espresso/5 px-4 py-3 ring-1 ring-espresso/10"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">🥤</span>
-                  <p className="font-semibold text-cream">{juice.name}</p>
+                  <p className="font-semibold text-espresso">{juice.name}</p>
                 </div>
-                <span className="font-mono text-sm text-caramel-light">
+                <span className="font-mono text-sm text-espresso">
                   {juice.price}
                 </span>
               </div>
@@ -238,7 +383,7 @@ export default function Menu() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl bg-cream/5 ring-1 ring-cream/10 overflow-hidden"
+            className="rounded-3xl bg-white ring-1 ring-espresso/10 overflow-hidden"
           >
             <div className="relative h-56 w-full">
               <Image
@@ -250,10 +395,10 @@ export default function Menu() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 to-transparent" />
               <div className="absolute bottom-4 left-6">
-                <h3 className="font-display text-2xl font-bold text-cream sm:text-3xl">
-                  🧇 Bubble Waffles
+                <h3 className="font-display text-2xl font-bold text-espresso sm:text-3xl">
+                  Bubble Waffles
                 </h3>
-                <p className="text-sm text-caramel-light font-semibold">Crispy. Creamy. Dreamy.</p>
+                <p className="text-sm text-espresso font-semibold">Crispy. Creamy. Dreamy.</p>
               </div>
             </div>
             <div className="p-6 sm:p-10">
@@ -261,10 +406,10 @@ export default function Menu() {
                 {bubbleWaffles.map((w) => (
                   <div key={w.name} className="flex items-start justify-between gap-4 border-b border-cream/10 pb-3 last:border-0 last:pb-0">
                     <div>
-                      <p className="font-semibold text-cream">{w.name}</p>
-                      <p className="mt-1 text-xs text-cream/50">{w.desc}</p>
+                      <p className="font-semibold text-espresso">{w.name}</p>
+                      <p className="mt-1 text-xs text-espresso/60">{w.desc}</p>
                     </div>
-                    <span className="shrink-0 font-mono text-sm text-caramel-light">
+                    <span className="shrink-0 font-mono text-sm text-espresso">
                       {w.price}
                     </span>
                   </div>
@@ -278,7 +423,7 @@ export default function Menu() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="rounded-3xl bg-cream/5 ring-1 ring-cream/10 overflow-hidden"
+            className="rounded-3xl bg-white ring-1 ring-espresso/10 overflow-hidden"
           >
             <div className="relative h-56 w-full">
               <Image
@@ -290,18 +435,18 @@ export default function Menu() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 to-transparent" />
               <div className="absolute bottom-4 left-6">
-                <h3 className="font-display text-2xl font-bold text-cream sm:text-3xl">
-                  🥟 Himalayan Momo &amp; 🍜 Ramen
+                <h3 className="font-display text-2xl font-bold text-espresso sm:text-3xl">
+                  Himalayan Momo & Ramen
                 </h3>
-                <p className="text-sm text-caramel-light font-semibold">Steamed to Perfection. Warm Bowl. Happy Soul.</p>
+                <p className="text-sm text-espresso font-semibold">Steamed to Perfection. Warm Bowl. Happy Soul.</p>
               </div>
             </div>
             <div className="p-6 sm:p-10">
               <div className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
                 {[...momoAndRamen.momo, ...momoAndRamen.ramen].map((item) => (
                   <div key={item.name} className="flex items-center justify-between gap-3 py-1.5">
-                    <p className="text-sm text-cream/80">{item.name}</p>
-                    <span className="shrink-0 font-mono text-sm text-caramel-light">
+                    <p className="text-sm text-espresso/80">{item.name}</p>
+                    <span className="shrink-0 font-mono text-sm text-espresso">
                       {item.price}
                     </span>
                   </div>
@@ -311,43 +456,26 @@ export default function Menu() {
           </motion.div>
         </div>
 
-        {/* Chocolate Dipped + Specialty + Toppings */}
-        <div className="mt-8 grid gap-8 lg:grid-cols-3">
+        {/* Chocolate Dipped + Toppings */}
+        <div className="mt-8 grid gap-8 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl bg-cream/5 p-6 ring-1 ring-cream/10"
+            className="rounded-3xl bg-white p-6 ring-1 ring-espresso/10"
           >
-            <h3 className="font-display text-xl font-bold text-cream">
-              🍓 Chocolate Dipped
-            </h3>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg">
+                <Image src="/images/chocolate dipped.jpg" alt="Chocolate Dipped" fill sizes="48px" className="object-cover" />
+              </div>
+              <h3 className="font-display text-xl font-bold text-espresso">Chocolate Dipped</h3>
+            </div>
             <div className="mt-4 space-y-3">
               {chocolateDipped.map((c) => (
                 <div key={c.name} className="flex items-center justify-between gap-3">
-                  <p className="text-sm text-cream/80">{c.name}</p>
-                  <span className="shrink-0 font-mono text-xs text-caramel-light">{c.price}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.08 }}
-            className="rounded-3xl bg-cream/5 p-6 ring-1 ring-cream/10"
-          >
-            <h3 className="font-display text-xl font-bold text-cream">
-              🥭 Specialty
-            </h3>
-            <div className="mt-4 space-y-3">
-              {specialtyDrinks.map((s) => (
-                <div key={s.name} className="flex items-center justify-between gap-3">
-                  <p className="text-sm text-cream/80">{s.name}</p>
-                  <span className="shrink-0 font-mono text-xs text-caramel-light">{s.price}</span>
+                  <p className="text-sm text-espresso/80">{c.name}</p>
+                  <span className="shrink-0 font-mono text-xs text-espresso">{c.price}</span>
                 </div>
               ))}
             </div>
@@ -358,13 +486,13 @@ export default function Menu() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.16 }}
-            className="rounded-3xl bg-cream/5 p-6 ring-1 ring-cream/10"
+            className="rounded-3xl bg-white p-6 ring-1 ring-espresso/10"
           >
-            <h3 className="font-display text-xl font-bold text-cream">
+            <h3 className="font-display text-xl font-bold text-espresso">
               ✨ Toppings — {toppings.price}
             </h3>
-            <p className="mt-4 text-sm text-cream/70">{toppings.poppings}</p>
-            <p className="mt-2 text-sm text-cream/70">{toppings.jelly}</p>
+            <p className="mt-4 text-sm text-espresso/70">{toppings.poppings}</p>
+            <p className="mt-2 text-sm text-espresso/70">{toppings.jelly}</p>
           </motion.div>
         </div>
 

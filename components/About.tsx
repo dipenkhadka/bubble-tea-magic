@@ -23,7 +23,7 @@ const points = [
 
 export default function About() {
   return (
-    <section className="bg-cream py-20 sm:py-28">
+    <section className="bg-cream py-10 sm:py-14">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div

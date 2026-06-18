@@ -29,57 +29,60 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#c9b8e8]/95 backdrop-blur-md shadow-[0_2px_20px_-8px_rgba(0,0,0,0.15)]"
-          : "bg-[#c9b8e8]/90 backdrop-blur-sm"
+          ? "bg-[#F5F0EB] shadow-[0_2px_20px_-8px_rgba(0,0,0,0.15)]"
+          : "bg-[#F5F0EB]"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-2 lg:justify-center">
-          <a href="#top" className="flex items-center gap-3 focus-ring rounded-lg">
-            <div className="relative h-28 w-28 shrink-0 sm:h-36 sm:w-36">
+      <div className="relative z-10 w-full px-4 sm:px-6">
+        <div className="flex items-center justify-between py-1">
+          {/* Logo + Brand */}
+          <a href="#top" className="focus-ring rounded-lg flex items-center gap-3 shrink-0">
+            <div className="relative h-24 w-24">
               <Image
                 src="/images/logo.png"
                 alt="Bubble Tea Magic logo"
                 fill
-                sizes="144px"
+                sizes="96px"
                 className="object-contain"
                 priority
               />
             </div>
-            <span className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-black tracking-tight">
+            <span className="font-display text-xl sm:text-2xl font-extrabold text-black tracking-wide">
               Bubble Tea Magic
             </span>
           </a>
 
+          {/* Desktop nav */}
+          <div className="hidden items-center gap-2 lg:flex">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="focus-ring rounded-full px-4 py-1.5 text-sm font-semibold text-white transition-all hover:opacity-80"
+                style={{backgroundColor: "#C4956A"}}
+              >
+                {l.label}
+              </a>
+            ))}
+            <a
+              href={business.doorDashUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="focus-ring inline-flex items-center gap-2 rounded-full bg-[#ff3008] px-5 py-1.5 text-sm font-bold text-white shadow-sm transition-transform hover:scale-105 hover:bg-[#e02a07]"
+            >
+              <ShoppingBag className="h-4 w-4" />
+              Order on DoorDash
+            </a>
+          </div>
+
+          {/* Mobile menu button */}
           <button
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
             className="focus-ring rounded-lg p-2 text-espresso lg:hidden"
           >
-            {open ? <X size={28} /> : <Menu size={28} />}
+            {open ? <X size={24} /> : <Menu size={24} />}
           </button>
-        </div>
-
-        <div className="hidden items-center justify-center gap-2 pb-3 lg:flex">
-          {links.map((l) => (
-  <a
-    key={l.href}
-    href={l.href}
-    className="focus-ring rounded-full border border-espresso/20 bg-white/40 px-4 py-1.5 text-sm font-semibold text-espresso transition-all hover:border-espresso hover:bg-white/70"
-  >
-    {l.label}
-  </a>
-))}
-
-<a
-  href={business.doorDashUrl}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="focus-ring inline-flex items-center gap-2 rounded-full bg-[#ff3008] px-5 py-1.5 text-sm font-bold text-white shadow-sm transition-transform hover:scale-105 hover:bg-[#e02a07]"
->
-  <ShoppingBag className="h-4 w-4" />
-  Order on DoorDash
-</a>
         </div>
       </div>
 
@@ -90,7 +93,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="overflow-hidden border-t border-espresso/10 bg-[#c9b8e8] lg:hidden"
+            className="overflow-hidden border-t border-white/10 bg-[#F5F0EB] lg:hidden"
           >
             <div className="flex flex-col gap-1 px-4 py-4 sm:px-6">
               {links.map((l) => (
@@ -98,7 +101,7 @@ export default function Navbar() {
     key={l.href}
     href={l.href}
     onClick={() => setOpen(false)}
-    className="focus-ring rounded-lg px-3 py-3 text-base font-semibold text-espresso hover:bg-espresso/10"
+    className="focus-ring rounded-lg px-3 py-3 text-base font-semibold text-white hover:bg-white/10"
   >
     {l.label}
   </a>
