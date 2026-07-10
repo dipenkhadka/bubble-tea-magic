@@ -3,7 +3,7 @@ export const business = {
   address: "1201 N Main St #300, Euless, TX 76039",
   phone: "(817) 555-0123",
   email: "info.bubbleteamagic@gmail.com",
-  doorDashUrl: "https://www.doordash.com",
+  doorDashUrl: "https://order.online/business/-13756393",
   instagramUrl: "https://www.instagram.com/bubbleteamagic/?hl=en",
   mapsEmbed:
     "https://www.google.com/maps?q=1201+N+Main+St+%23300,+Euless,+TX+76039&output=embed",
