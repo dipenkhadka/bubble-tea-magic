@@ -22,7 +22,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bubbleteamagic.com"),
+  metadataBase: new URL("https://bubbleteamagics.com"),
   title: {
     default: "Bubble Tea Magic | Premium Bubble Tea in Euless, TX",
     template: "%s | Bubble Tea Magic",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Bubble Tea Magic | Premium Bubble Tea in Euless, TX",
     description:
       "Freshly crafted bubble tea, fruit teas, Vietnamese iced coffee, bubble waffles, shaved ice, fresh juices, momo & ramen. Daily Happy Hour 12-3pm.",
-    url: "https://bubbleteamagic.com",
+    url: "https://bubbleteamagics.com",
     siteName: "Bubble Tea Magic",
     locale: "en_US",
     type: "website",
@@ -55,9 +55,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CafeOrCoffeeShop",
   name: "Bubble Tea Magic",
-  image: "https://bubbleteamagic.com/images/logo.jpeg",
-  "@id": "https://bubbleteamagic.com",
-  url: "https://bubbleteamagic.com",
+  image: "https://bubbleteamagics.com/images/logo.jpeg",
+  "@id": "https://bubbleteamagics.com",
+  url: "https://bubbleteamagics.com",
   telephone: "+1-817-555-0123",
   priceRange: "$$",
   address: {
