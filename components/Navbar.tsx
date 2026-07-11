@@ -7,11 +7,11 @@ import Image from "next/image";
 import { business } from "@/lib/data";
 
 const links = [
-  { href: "#menu", label: "Menu" },
-  { href: "#happy-hour", label: "Happy Hour" },
-  { href: "#rewards", label: "Rewards" },
-  { href: "#catering", label: "Catering" },
-  { href: "#location", label: "Visit Us" },
+  { href: "#menu", label: "Menu", emoji: "🧋" },
+  { href: "#happy-hour", label: "Happy Hour", emoji: "⏰" },
+  { href: "#rewards", label: "Rewards", emoji: "⭐" },
+  { href: "#catering", label: "Catering", emoji: "🎉" },
+  { href: "#location", label: "Visit Us", emoji: "📍" },
 ];
 
 export default function Navbar() {
@@ -93,30 +93,48 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="overflow-hidden border-t border-white/10 bg-[#F5F0EB] lg:hidden"
+            className="overflow-hidden border-t border-espresso/10 bg-[#F5F0EB] lg:hidden"
           >
-            <div className="flex flex-col gap-1 px-4 py-4 sm:px-6">
-              {links.map((l) => (
-  <a
-    key={l.href}
-    href={l.href}
-    onClick={() => setOpen(false)}
-    className="focus-ring rounded-lg px-3 py-3 text-base font-semibold text-espresso hover:bg-espresso/10"
-  >
-    {l.label}
-  </a>
-))}
+            <div className="flex flex-col gap-2 px-4 py-4 sm:px-6">
 
-<a
-  href={business.doorDashUrl}
-  target="_blank"
-  rel="noopener noreferrer"
-  onClick={() => setOpen(false)}
-  className="focus-ring mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#ff3008] px-5 py-3 text-center text-base font-bold text-white"
->
-  <ShoppingBag className="h-4 w-4" />
-  Order on DoorDash
-</a>
+              {/* Back to Home */}
+              <a
+                href="#top"
+                onClick={() => setOpen(false)}
+                className="focus-ring flex items-center gap-3 rounded-xl bg-espresso px-4 py-3 font-display text-base font-bold text-cream tracking-wide"
+              >
+                <span className="text-xl">🏠</span>
+                Back to Home
+              </a>
+
+              <div className="my-1 h-px bg-espresso/10" />
+
+              {/* Nav links */}
+              {links.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="focus-ring flex items-center gap-3 rounded-xl border border-espresso/10 bg-white px-4 py-3 font-display text-base font-bold text-espresso shadow-sm transition-all active:scale-95"
+                >
+                  <span className="text-xl">{l.emoji}</span>
+                  {l.label}
+                </a>
+              ))}
+
+              <div className="my-1 h-px bg-espresso/10" />
+
+              {/* DoorDash */}
+              <a
+                href={business.doorDashUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="focus-ring inline-flex items-center justify-center gap-2 rounded-xl bg-[#ff3008] px-5 py-3.5 text-center font-display text-base font-bold text-white shadow-md tracking-wide"
+              >
+                <ShoppingBag className="h-5 w-5" />
+                Order on DoorDash
+              </a>
             </div>
           </motion.div>
         )}
