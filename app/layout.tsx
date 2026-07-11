@@ -24,8 +24,8 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://bubbleteamagics.com"),
   icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/images/Bubble%20tea%20magic.jpeg",
+    apple: "/images/Bubble%20tea%20magic.jpeg",
   },
   title: {
     default: "Bubble Tea Magic | Premium Bubble Tea in Euless, TX",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.bubbleteamagics.com/images/logo.png",
+        url: "https://www.bubbleteamagics.com/images/Bubble%20tea%20magic.jpeg",
         width: 1200,
         height: 630,
         alt: "Bubble Tea Magic | Premium Bubble Tea in Euless, TX",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title: "Bubble Tea Magic | Premium Bubble Tea in Euless, TX",
     description:
       "Freshly crafted bubble tea, fruit teas, Vietnamese iced coffee, bubble waffles & more. Daily Happy Hour 12-3pm in Euless, TX.",
-    images: ["https://www.bubbleteamagics.com/images/logo.png"],
+    images: ["https://www.bubbleteamagics.com/images/Bubble%20tea%20magic.jpeg"],
   },
   robots: { index: true, follow: true },
 };
@@ -74,7 +74,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CafeOrCoffeeShop",
   name: "Bubble Tea Magic",
-  image: "https://www.bubbleteamagics.com/images/logo.png",
+  image: "https://www.bubbleteamagics.com/images/Bubble%20tea%20magic.jpeg",
   "@id": "https://bubbleteamagics.com",
   url: "https://bubbleteamagics.com",
   telephone: "+1-817-555-0123",
@@ -130,8 +130,8 @@ export default function RootLayout({
       className={`${fraunces.variable} ${jakarta.variable} ${jetbrains.variable} h-full antialiased`}
     >
       <head>
-        <link rel="icon" href="/favicon.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
+        <link rel="icon" href="/images/Bubble%20tea%20magic.jpeg" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/Bubble%20tea%20magic.jpeg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
