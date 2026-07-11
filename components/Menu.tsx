@@ -36,7 +36,7 @@ function FlavorPills({ flavors }: { flavors: string[] }) {
 
 export default function Menu() {
   return (
-    <section id="menu" className="py-10 sm:py-14" style={{backgroundColor: "#F0E6D8"}}>
+    <section id="menu" className="py-10 sm:py-14 scroll-mt-32" style={{backgroundColor: "#F0E6D8"}}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

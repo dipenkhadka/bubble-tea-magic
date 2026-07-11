@@ -13,7 +13,7 @@ const events = [
 
 export default function Catering() {
   return (
-    <section id="catering" className="bg-latte/10 py-20 sm:py-28">
+    <section id="catering" className="bg-latte/10 py-20 sm:py-28 scroll-mt-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <motion.div

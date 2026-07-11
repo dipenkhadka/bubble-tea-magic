@@ -6,7 +6,7 @@ import { business } from "@/lib/data";
 
 export default function Location() {
   return (
-    <section id="location" className="bg-cream py-20 sm:py-28">
+    <section id="location" className="bg-cream py-20 sm:py-28 scroll-mt-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

@@ -5,7 +5,7 @@ import { Clock } from "lucide-react";
 
 export default function HappyHour() {
   return (
-    <section id="happy-hour" className="relative overflow-hidden bg-cream py-20 sm:py-28">
+    <section id="happy-hour" className="relative overflow-hidden bg-cream py-20 sm:py-28 scroll-mt-32">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}

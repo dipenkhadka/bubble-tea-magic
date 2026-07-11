@@ -84,7 +84,7 @@ const features = [
 
 export default function Rewards() {
   return (
-    <section id="rewards" className="bg-cream py-20 sm:py-28">
+    <section id="rewards" className="bg-cream py-20 sm:py-28 scroll-mt-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <motion.div
