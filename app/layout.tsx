@@ -47,6 +47,21 @@ export const metadata: Metadata = {
     siteName: "Bubble Tea Magic",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Bubble Tea Magic | Premium Bubble Tea in Euless, TX",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bubble Tea Magic | Premium Bubble Tea in Euless, TX",
+    description:
+      "Freshly crafted bubble tea, fruit teas, Vietnamese iced coffee, bubble waffles & more. Daily Happy Hour 12-3pm in Euless, TX.",
+    images: ["/opengraph-image"],
   },
   robots: { index: true, follow: true },
 };
