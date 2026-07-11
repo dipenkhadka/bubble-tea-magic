@@ -101,7 +101,7 @@ export default function Navbar() {
     key={l.href}
     href={l.href}
     onClick={() => setOpen(false)}
-    className="focus-ring rounded-lg px-3 py-3 text-base font-semibold text-white hover:bg-white/10"
+    className="focus-ring rounded-lg px-3 py-3 text-base font-semibold text-espresso hover:bg-espresso/10"
   >
     {l.label}
   </a>
