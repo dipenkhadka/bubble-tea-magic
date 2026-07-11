@@ -16,7 +16,7 @@ export default function OGImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "linear-gradient(135deg, #2a1a0f 0%, #3d2817 50%, #5c3520 100%)",
+          background: "#ffffff",
           fontFamily: "serif",
           position: "relative",
         }}
@@ -30,7 +30,7 @@ export default function OGImage() {
             width: 500,
             height: 500,
             borderRadius: "50%",
-            background: "rgba(201,162,39,0.08)",
+            background: "rgba(201,162,39,0.12)",
             display: "flex",
           }}
         />
@@ -42,7 +42,7 @@ export default function OGImage() {
             width: 400,
             height: 400,
             borderRadius: "50%",
-            background: "rgba(201,162,39,0.06)",
+            background: "rgba(61,40,23,0.06)",
             display: "flex",
           }}
         />
@@ -55,7 +55,7 @@ export default function OGImage() {
           style={{
             fontSize: 72,
             fontWeight: 900,
-            color: "#fff8f0",
+            color: "#2a1a0f",
             letterSpacing: "-1px",
             textAlign: "center",
             lineHeight: 1.1,
@@ -81,7 +81,7 @@ export default function OGImage() {
         <div
           style={{
             fontSize: 28,
-            color: "#e8b86d",
+            color: "#8b5a3c",
             textAlign: "center",
             fontWeight: 600,
             display: "flex",
@@ -105,12 +105,12 @@ export default function OGImage() {
               <div
                 key={tag}
                 style={{
-                  background: "rgba(255,255,255,0.1)",
-                  border: "1px solid rgba(255,255,255,0.15)",
+                  background: "#fff8f0",
+                  border: "1px solid #e8b86d",
                   borderRadius: 100,
                   padding: "8px 20px",
                   fontSize: 20,
-                  color: "#fff8f0",
+                  color: "#3d2817",
                   display: "flex",
                 }}
               >
@@ -126,7 +126,7 @@ export default function OGImage() {
             position: "absolute",
             bottom: 32,
             fontSize: 20,
-            color: "rgba(255,248,240,0.4)",
+            color: "rgba(61,40,23,0.35)",
             display: "flex",
           }}
         >
