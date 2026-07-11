@@ -130,6 +130,8 @@ export default function RootLayout({
       className={`${fraunces.variable} ${jakarta.variable} ${jetbrains.variable} h-full antialiased`}
     >
       <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
