@@ -98,14 +98,13 @@ export default function Navbar() {
             <div className="flex flex-col gap-2 px-4 py-4 sm:px-6">
 
               {/* Back to Home */}
-              <a
-                href="#top"
-                onClick={() => setOpen(false)}
-                className="focus-ring flex items-center gap-3 rounded-xl bg-espresso px-4 py-3 font-display text-base font-bold text-cream tracking-wide"
+              <button
+                onClick={() => { setOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                className="focus-ring flex items-center gap-3 rounded-xl bg-espresso px-4 py-3 font-display text-base font-bold text-cream tracking-wide w-full"
               >
                 <span className="text-xl">🏠</span>
                 Back to Home
-              </a>
+              </button>
 
               <div className="my-1 h-px bg-espresso/10" />
 
