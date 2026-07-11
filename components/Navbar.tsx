@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { Menu, X, ShoppingBag, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { business } from "@/lib/data";
@@ -14,9 +14,9 @@ const links = [
   { href: "#location", label: "Visit Us", emoji: "📍", desc: "Euless, TX · Get directions" },
 ];
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, x: -24 },
-  visible: (i: number) => ({ opacity: 1, x: 0, transition: { delay: i * 0.07, duration: 0.3, ease: "easeOut" } }),
+  visible: (i: number) => ({ opacity: 1, x: 0, transition: { delay: i * 0.07, duration: 0.3, ease: [0, 0, 0.2, 1] } }),
 };
 
 export default function Navbar() {
