@@ -23,6 +23,10 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bubbleteamagics.com"),
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   title: {
     default: "Bubble Tea Magic | Premium Bubble Tea in Euless, TX",
     template: "%s | Bubble Tea Magic",
