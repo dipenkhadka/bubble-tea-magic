@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.bubbleteamagics.com/images/slide1.png",
+        url: "https://www.bubbleteamagics.com/images/logo.png",
         width: 1200,
         height: 630,
         alt: "Bubble Tea Magic | Premium Bubble Tea in Euless, TX",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title: "Bubble Tea Magic | Premium Bubble Tea in Euless, TX",
     description:
       "Freshly crafted bubble tea, fruit teas, Vietnamese iced coffee, bubble waffles & more. Daily Happy Hour 12-3pm in Euless, TX.",
-    images: ["https://www.bubbleteamagics.com/images/slide1.png"],
+    images: ["https://www.bubbleteamagics.com/images/logo.png"],
   },
   robots: { index: true, follow: true },
 };
@@ -70,7 +70,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CafeOrCoffeeShop",
   name: "Bubble Tea Magic",
-  image: "https://www.bubbleteamagics.com/images/slide1.png",
+  image: "https://www.bubbleteamagics.com/images/logo.png",
   "@id": "https://bubbleteamagics.com",
   url: "https://bubbleteamagics.com",
   telephone: "+1-817-555-0123",
