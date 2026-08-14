@@ -91,24 +91,23 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.22 }}
-            className="fixed inset-0 z-40 lg:hidden flex flex-col"
-            style={{ background: "linear-gradient(170deg,#1e110a 0%,#2a1a0f 45%,#3d2817 100%)" }}
+            className="fixed inset-0 z-40 lg:hidden flex flex-col bg-[#fff8f0]"
           >
             {/* Top bar */}
             <div className="flex items-center justify-between px-6 pt-8 pb-6">
               <div>
                 <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-caramel">Navigation</p>
-                <p className="text-xl font-extrabold text-cream mt-0.5">Bubble Tea Magic</p>
+                <p className="text-xl font-extrabold text-espresso mt-0.5">Bubble Tea Magic</p>
               </div>
               <button onClick={close}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-cream/70 hover:text-cream transition-colors"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-espresso/15 text-espresso/70 hover:text-espresso transition-colors"
                 aria-label="Close menu">
                 <X size={18} />
               </button>
             </div>
 
             {/* Divider */}
-            <div className="mx-6 h-px bg-white/8" />
+            <div className="mx-6 h-px bg-espresso/10" />
 
             {/* Nav items */}
             <nav className="flex flex-col px-6 pt-2 flex-1">
@@ -121,14 +120,14 @@ export default function Navbar() {
                   initial="hidden"
                   animate="visible"
                   onClick={close}
-                  className="group flex items-center gap-4 py-4 border-b border-white/8 active:opacity-60 transition-opacity"
+                  className="group flex items-center gap-4 py-4 border-b border-espresso/10 active:opacity-60 transition-opacity"
                 >
                   <span className="text-2xl w-8 text-center">{l.emoji}</span>
                   <div className="flex-1">
-                    <p className="text-base font-bold text-cream">{l.label}</p>
-                    <p className="text-xs text-white/40 mt-0.5">{l.desc}</p>
+                    <p className="text-base font-bold text-espresso">{l.label}</p>
+                    <p className="text-xs text-espresso/50 mt-0.5">{l.desc}</p>
                   </div>
-                  <span className="text-white/25 text-lg group-active:translate-x-1 transition-transform">›</span>
+                  <span className="text-espresso/30 text-lg group-active:translate-x-1 transition-transform">›</span>
                 </motion.a>
               ))}
             </nav>
@@ -151,7 +150,7 @@ export default function Navbar() {
               {/* Back to top */}
               <button
                 onClick={() => { close(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-                className="flex items-center justify-center gap-2 rounded-2xl border border-white/12 py-3.5 text-sm font-semibold text-white/60 active:scale-95 transition-transform"
+                className="flex items-center justify-center gap-2 rounded-2xl border border-espresso/15 py-3.5 text-sm font-semibold text-espresso/60 active:scale-95 transition-transform"
               >
                 <span className="text-base">↑</span>
                 Back to Top

@@ -1,7 +1,7 @@
 export const business = {
   name: "Bubble Tea Magic",
   address: "1201 N Main St #300, Euless, TX 76039",
-  phone: "(817) 555-0123",
+  phone: "(682) 503-4244",
   email: "info.bubbleteamagic@gmail.com",
   doorDashUrl: "https://order.online/business/-13756393",
   instagramUrl: "https://www.instagram.com/bubbleteamagic/?hl=en",

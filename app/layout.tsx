@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -70,6 +70,10 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#fff8f0",
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CafeOrCoffeeShop",
@@ -77,7 +81,7 @@ const jsonLd = {
   image: "https://www.bubbleteamagics.com/images/Bubble%20tea%20magic.jpeg",
   "@id": "https://bubbleteamagics.com",
   url: "https://bubbleteamagics.com",
-  telephone: "+1-817-555-0123",
+  telephone: "+1-682-503-4244",
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
